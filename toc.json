@@ -1,0 +1,109 @@
+{
+  "items": [
+    {
+      "type": "item",
+      "title": "Introduction",
+      "uri": "docs/introduction.md"
+    },
+    {
+      "type": "item",
+      "title": "Contribute to Swaggermen",
+      "uri": "CONTRIBUTING.md"
+    },
+    {
+      "type": "item",
+      "title": "Swaggermen vs Swaggermen Dev Portal",
+      "uri": "docs/swaggermen-vs-dev-portal.md"
+    },
+    {
+      "type": "divider",
+      "title": "Getting Started"
+    },
+    {
+      "type": "group",
+      "title": "Swaggermen",
+      "items": [
+        {
+          "type": "item",
+          "title": "Introduction to Swaggermen",
+          "uri": "docs/getting-started/swaggermen/introduction.md"
+        },
+        {
+          "type": "item",
+          "title": "Usage with React",
+          "uri": "docs/getting-started/swaggermen/react.md"
+        },
+        {
+          "type": "item",
+          "title": "Usage with HTML",
+          "uri": "docs/getting-started/swaggermen/html.md"
+        },
+        {
+          "type": "item",
+          "title": "Usage with Angular",
+          "uri": "docs/getting-started/swaggermen/angular.md"
+        },
+          {
+          "type": "item",
+          "title": "Swaggermen Configuration Options",
+          "uri": "docs/getting-started/swaggermen/swaggermen-options.md"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "title": "Swaggermen Dev Portal",
+      "items": [
+        {
+          "type": "item",
+          "title": "Introduction to Swaggermen Dev Portal",
+          "uri": "docs/getting-started/dev-portal/introduction.md"
+        },
+        {
+          "type": "item",
+          "title": "Usage with React",
+          "uri": "docs/getting-started/dev-portal/react.md"
+        },
+        {
+          "type": "item",
+          "title": "Usage with HTML",
+          "uri": "docs/getting-started/dev-portal/html.md"
+        },
+        {
+          "type": "item",
+          "title": "Usage with Angular",
+          "uri": "docs/getting-started/dev-portal/dev-portal-angular.md"
+        },
+        {
+          "type": "item",
+          "title": "Dev Portal Configuration Options",
+          "uri": "docs/getting-started/dev-portal/dev-portal-options.md"
+        },
+        {
+          "type": "item",
+          "title": "Swaggermen Dev Portal Search",
+          "uri": "docs/getting-started/dev-portal/search-component.md"
+        }
+      ]
+    },
+    {
+      "type": "divider",
+      "title": "Guides"
+    },
+    {
+      "type": "item",
+      "title": "Hello World Example",
+      "uri": "docs/guides/hello-world.md"
+    },
+    {
+      "type": "item",
+      "title": "Layouts",
+      "uri": "docs/guides/layouts.md"
+    },
+    {
+      "type": "item",
+      "title": "Great API Documentation",
+      "uri": "docs/guides/great-api-docs.md"
+    }
+  ]
+}

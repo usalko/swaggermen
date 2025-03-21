@@ -1,0 +1,97 @@
+.sl-swaggermen {
+  font-size: 13px;
+}
+
+.sl-swaggermen .svg-inline--fa {
+  display: inline-block;
+}
+
+/* Docs */
+
+.sl-swaggermen .DocsSkeleton {
+  animation: 500ms linear infinite alternate skeleton-glow;
+  background: rgba(206, 217, 224, 0.2);
+  background-clip: padding-box !important;
+  border-color: rgba(206, 217, 224, 0.2) !important;
+  border-radius: 2px;
+  box-shadow: none !important;
+  color: transparent !important;
+  cursor: default;
+  pointer-events: none;
+  user-select: none;
+}
+
+.sl-swaggermen .Model {
+  --fs-code: 12px;
+}
+
+/* Table of Contents */
+
+.sl-swaggermen .SwaggermenTableOfContentsItem:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* TryIt */
+
+.sl-swaggermen .ParameterGrid {
+  display: grid;
+  grid-template-columns: fit-content(120px) 20px auto;
+  row-gap: 3px;
+  align-items: center;
+  padding-bottom: 0;
+  margin-bottom: 16px;
+}
+
+.sl-swaggermen .TryItPanel > :nth-child(2) {
+  /* This, along with the padding:0 margin: 16s above causes margin collapse to guarantee correct spacing around the panels & send button */
+  overflow: auto;
+}
+
+.sl-swaggermen .OperationParametersContent {
+  max-height: 162px; /* 4.5 lines plus padding */
+}
+
+.sl-swaggermen .Checkbox {
+  max-width: 15px;
+  padding-right: 3px;
+}
+
+.sl-swaggermen .TextForCheckBox {
+  padding-top: 6px;
+  padding-left: 9px;
+}
+
+.sl-swaggermen .TextRequestBody {
+  max-height: 200px;
+  overflow-y: auto;
+  padding-bottom: 0;
+  margin-bottom: 16px;
+}
+
+/* HttpOperation */
+
+.sl-swaggermen .HttpOperation .JsonSchemaViewer .sl-markdown-viewer p {
+  font-size: 12px;
+  line-height: 1.5em;
+}
+
+.sl-swaggermen .HttpOperation__Parameters .sl-markdown-viewer p {
+  font-size: 12px;
+  line-height: 1.5em;
+}
+
+.sl-swaggermen .Model .JsonSchemaViewer .sl-markdown-viewer p {
+  font-size: 12px;
+  line-height: 1.5em;
+}
+
+.sl-swaggermen .HttpOperation div[role=tablist] {
+  /* Enables horizontal scrolling for response tabs */
+  overflow-x: auto;
+}
+
+.sl-swaggermen .HttpService .ServerInfo .sl-panel__titlebar div {
+  height: 100%;
+  min-height: 36px;
+}

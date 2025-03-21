@@ -1,0 +1,12 @@
+module.exports = {
+  preset: '@swaggermen/scripts',
+  testEnvironment: 'jsdom',
+  setupFilesAfterEnv: ['<rootDir>/../../setupTests.ts'],
+  snapshotSerializers: ['enzyme-to-json/serializer'],
+  testMatch: ['<rootDir>/src/**/*.(spec|test).(ts|js)?(x)'],
+  coveragePathIgnorePatterns: ['__tests__', '__fixtures__', '__stories__'],
+  testTimeout: 10000,
+  moduleNameMapper: {
+    '^@swaggermen/swaggermen-core$': '<rootDir>/../swaggermen-core/src',
+  },
+};

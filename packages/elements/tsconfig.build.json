@@ -1,0 +1,18 @@
+{
+  "extends": "./tsconfig.json",
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "**/__*__/**"
+  ],
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "dist",
+    "moduleResolution": "node",
+    "paths": {
+      "@swaggermen/swaggermen-core": ["../swaggermen-core/dist"],
+      "@swaggermen/swaggermen-core/*": ["../swaggermen-core/dist/*"],
+    }
+  }
+}

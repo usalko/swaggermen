@@ -1,0 +1,17 @@
+{
+  "extends": "@swaggermen/scripts/tsconfig.json",
+  "include": ["./cypress"],
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "baseUrl": "./packages",
+    "lib": ["es2021", "dom"],
+    "paths": {
+      "@swaggermen/swaggermen": ["./swaggermen/src"],
+      "@swaggermen/swaggermen/*": ["./swaggermen/src/*"],
+      "@swaggermen/swaggermen-dev-portal": ["./swaggermen-dev-portal/src"],
+      "@swaggermen/swaggermen-dev-portal/*": ["./swaggermen-dev-portal/src/*"],
+      "@swaggermen/swaggermen-core": ["./swaggermen-core/src"],
+      "@swaggermen/swaggermen-core/*": ["./swaggermen-core/src/*"]
+    }
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "name": "root",
+  "private": true,
+  "homepage": "https://github.com/usalko/swaaggermen",
+  "bugs": "https://github.com/usalko/swaaggermen/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/usalko/swaaggermen"
+  },
+  "license": "Apache-2.0",
+  "workspaces": [
+    "demo",
+    "packages/*"
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.17.9",
+    "@babel/preset-env": "^7.23.3",
+    "@babel/preset-react": "^7.23.3",
+    "@babel/preset-typescript": "^7.23.3",
+    "@swaggermen/eslint-config": "2.1.0",
+    "@storybook/addon-controls": "7.5.3",
+    "@storybook/addon-docs": "7.5.3",
+    "@storybook/addon-styling-webpack": "0.0.5",
+    "@storybook/addon-toolbars": "7.5.3",
+    "@storybook/addon-viewport": "7.5.3",
+    "@storybook/addons": "7.5.3",
+    "@storybook/react": "7.5.3",
+    "@storybook/react-webpack5": "7.5.3",
+    "@storybook/theming": "7.5.3",
+    "@testing-library/cypress": "^10.0.2",
+    "@typescript-eslint/eslint-plugin": "4.33.0",
+    "@typescript-eslint/parser": "4.28.4",
+    "concurrently": "8.2.2",
+    "css-loader": "6.7.1",
+    "cssnano": "5.0.6",
+    "cypress": "^13.6.6",
+    "eslint": "7.31.0",
+    "eslint-plugin-import": "2.29.1",
+    "eslint-plugin-jest": "24.4.0",
+    "eslint-plugin-prettier": "3.4.0",
+    "eslint-plugin-react": "7.24.0",
+    "eslint-plugin-react-hooks": "4.2.0",
+    "eslint-plugin-simple-import-sort": "7.0.0",
+    "eslint-plugin-storybook": "^0.8.0",
+    "jest": "^26.6.3",
+    "jest-environment-jsdom": "^26.3.1",
+    "jest-environment-jsdom-global": "^4.0.0",
+    "jest-junit": "12.2.0",
+    "lerna": "^7.4.2",
+    "postcss": "8.4.43",
+    "postcss-cli": "8.3.1",
+    "postcss-import": "16.1.0",
+    "postcss-loader": "8.1.1",
+    "prettier": "2.8.8",
+    "process": "0.11.10",
+    "react": "16.14.0",
+    "react-dom": "16.14.0",
+    "start-server-and-test": "^2.0.0",
+    "storybook": "7.5.3",
+    "style-loader": "^3.3.3",
+    "ts-jest": "^26.5.6",
+    "tsconfig-paths-webpack-plugin": "^3.2.0",
+    "typescript": "4.7.4",
+    "webpack": "5.94.0",
+    "webpack-cli": "5.1.4",
+    "webpack-dev-server": "4.15.1"
+  },
+  "resolutions": {
+    "fast-xml-parser": "4.4.1",
+    "tar": "6.2.1",
+    "micromatch": "4.0.8",
+    "@swaggermen/react-error-boundary": "3.0.0"
+  },
+  "scripts": {
+    "demo": "yarn workspace @swaggermen/swaggermen-demo",
+    "swaggermen": "yarn workspace @swaggermen/swaggermen",
+    "swaggermen-core": "yarn workspace @swaggermen/swaggermen-core",
+    "swaggermen-dev-portal": "yarn workspace @swaggermen/swaggermen-dev-portal",
+    "build": "yarn workspace @swaggermen/swaggermen-core build && yarn workspace @swaggermen/swaggermen build && yarn workspace @swaggermen/swaggermen-dev-portal build",
+    "build.docs": "yarn workspace @swaggermen/swaggermen build.docs",
+    "postbuild": "yarn workspace @swaggermen/swaggermen test.packaging && yarn workspace @swaggermen/swaggermen-core test.packaging && yarn workspace @swaggermen/swaggermen-dev-portal test.packaging",
+    "lint": "eslint '{packages,examples}/*/src/**/*.{ts,tsx}'",
+    "version": "lerna version --no-push",
+    "release": "lerna publish from-package --yes --registry https://registry.npmjs.org --loglevel silly",
+    "release.docs": "yarn workspace @swaggermen/swaggermen release.docs",
+    "type-check": "yarn workspaces run type-check",
+    "test": "yarn workspace @swaggermen/swaggermen test && yarn workspace @swaggermen/swaggermen-core test && yarn workspace @swaggermen/swaggermen-dev-portal test --passWithNoTests",
+    "test.prod": "yarn workspace @swaggermen/swaggermen test.prod && yarn workspace @swaggermen/swaggermen-core test.prod && yarn workspace @swaggermen/swaggermen-dev-portal test.prod --passWithNoTests",
+    "prepublishOnly": "yarn build",
+    "/// examples ///": "",
+    "copy:angular": "mkdir examples-dev ; cp -a -v ./examples/angular ./examples-dev ; sh ./use-local-swaggermen.sh angular",
+    "build:angular": "(cd ./examples-dev/angular && yarn reinstall && yarn build)",
+    "serve:angular": "(cd ./examples-dev/angular && yarn serve)",
+    "copy:react-cra": "mkdir examples-dev ; cp -a -v ./examples/react-cra ./examples-dev ; sh ./use-local-swaggermen.sh react-cra",
+    "build:react-cra": "(cd ./examples-dev/react-cra && yarn reinstall && yarn build)",
+    "serve:react-cra": "(cd ./examples-dev/react-cra && yarn serve)",
+    "copy:static-html": "mkdir examples-dev ; cp -a -v ./examples/static-html ./examples-dev ; sh ./use-local-swaggermen.sh static-html",
+    "build:static-html": "(cd ./examples-dev/static-html && yarn reinstall && yarn build)",
+    "serve:static-html": "(cd ./examples-dev/static-html && yarn serve)",
+    "/// e2e ///": "",
+    "e2e:open": "cypress open",
+    "e2e:execute": "cypress run",
+    "e2e:run:angular": "start-server-and-test serve:angular http://localhost:4200 e2e:execute",
+    "e2e:run:react-cra": "start-server-and-test serve:react-cra http://localhost:4200 e2e:execute",
+    "e2e:run:static-html": "start-server-and-test serve:static-html http://localhost:4200 e2e:execute"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "eslint --fix"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "dependencies": {}
+}
