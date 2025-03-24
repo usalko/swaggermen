@@ -13,17 +13,17 @@ Use the [React App template](https://github.com/swaggermenio/cra-template-swagge
 npx create-react-app@4.0.3 my-dir --template @swaggermen/swaggermen
 ```
 
-Then, run `cd my-dir` and `yarn start` to see a basic Swaggermen website in the browser.
+Then, run `cd my-dir` and `npm run start` to see a basic Swaggermen website in the browser.
 
 ## Manual Setup
 
 To install Swaggermen Dev Portal in an existing React app, follow these instructions.
 
 
-1. Install the [`@swaggermen/swaggermen`](https://www.npmjs.com/package/@swaggermen/swaggermen) package with NPM/Yarn.
+1. Install the [`@swaggermen/swaggermen`](https://www.npmjs.com/package/@swaggermen/swaggermen) package with NPM/npm run.
 
 ```bash
-yarn add @swaggermen/swaggermen
+npm add @swaggermen/swaggermen
 ```
 
 2. In `App.js` import the API component and CSS file from the Swaggermen library.
@@ -69,7 +69,7 @@ export default App;
 Now start the development server.
 
 ```bash
-yarn start
+npm run start
 ```
 
 And you should see the API reference documentation for the Zoom API.

@@ -17,9 +17,9 @@ git pull --ff-only
 BRANCH_NAME=feat/lockfile-maintenance-ci-job-$(date +"%m-%d-%Y")
 git checkout -b "$BRANCH_NAME"
 
-yarn upgrade
+npm i
 
-git add yarn.lock
+git add package-json.lock
 git commit -m "chore: weekly lockfile maintenance"
 git push --set-upstream origin "$BRANCH_NAME"
 

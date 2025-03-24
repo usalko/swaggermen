@@ -7,7 +7,7 @@ Learn how to get started with Swaggermen in an Angular project.
 First, install the Swaggermen library.
 
 ```bash
-yarn add @swaggermen/swaggermen
+npm run add @swaggermen/swaggermen
 ```
 
 Add the Swaggermen CSS and JavaScript bundles to your Angular config.
@@ -42,7 +42,7 @@ Add the Swaggermen CSS and JavaScript bundles to your Angular config.
 Now, generate a new Angular component for your API reference docs.
 
 ```bash
-yarn ng generate component api-reference
+npm run ng generate component api-reference
 ```
 
 This should generate an `api-reference` folder with a few files. In the `api-reference.component.html` file, add the Swaggermen API component.
@@ -116,7 +116,7 @@ export class AppModule {}
 Now, start the development server.
 
 ```bash
-yarn start
+npm run start
 ```
 
 And you should see the API reference documentation for the Zoom API.

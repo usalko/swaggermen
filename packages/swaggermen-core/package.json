@@ -30,8 +30,8 @@
     "node": ">=16"
   },
   "scripts": {
-    "build": "yarn build.react",
-    "postbuild": "yarn build.styles",
+    "build": "npm run build.react",
+    "postbuild": "npm run build.styles",
     "build.react": "sl-scripts bundle",
     "build.styles": "postcss src/styles.css -o dist/styles.min.css && cp src/core.css dist",
     "build.docs": "storybook build -o dist-storybook",
@@ -41,9 +41,9 @@
     "release.dryRun": "sl-scripts release --dry-run --debug",
     "storybook": "storybook dev -p 9001",
     "test": "jest",
-    "test.prod": "yarn test --coverage --maxWorkers=2",
-    "test.update": "yarn test --updateSnapshot",
-    "test.watch": "yarn test --watch",
+    "test.prod": "npm run test --coverage --maxWorkers=2",
+    "test.update": "npm run test --updateSnapshot",
+    "test.watch": "npm run test --watch",
     "test.packaging": "node --input-type=commonjs -e \"require('./dist/index.js')\" && node --input-type=module -e \"import './dist/index.mjs'\"",
     "type-check": "tsc --noEmit"
   },
