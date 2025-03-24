@@ -18,7 +18,7 @@ Now a file called `tictactoe.yaml` should be on your computer.
 
 ### Running Swaggermen
 
-Until the [Swaggermen CLI is ready](https://github.com/usalko/swaaggermen/issues/765), the quickest way to see how this API looks in Swaggermen is to make an `index.html` and embed Swaggermen as a [Web Component](https://developer.mozilla.org/en-US/docs/Web/Web_Components).
+Until the [Swaggermen CLI is ready](https://github.com/usalko/swaggermen/issues/765), the quickest way to see how this API looks in Swaggermen is to make an `index.html` and embed Swaggermen as a [Web Component](https://developer.mozilla.org/en-US/docs/Web/Web_Components).
 
 
 ```bash

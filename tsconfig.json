@@ -1,5 +1,5 @@
 {
-  "extends": "@swaggermen/scripts/tsconfig.json",
+  "extends": "@stoplight/scripts/tsconfig.json",
   "include": ["./cypress"],
   "compilerOptions": {
     "esModuleInterop": true,
@@ -8,8 +8,6 @@
     "paths": {
       "@swaggermen/swaggermen": ["./swaggermen/src"],
       "@swaggermen/swaggermen/*": ["./swaggermen/src/*"],
-      "@swaggermen/swaggermen-dev-portal": ["./swaggermen-dev-portal/src"],
-      "@swaggermen/swaggermen-dev-portal/*": ["./swaggermen-dev-portal/src/*"],
       "@swaggermen/swaggermen-core": ["./swaggermen-core/src"],
       "@swaggermen/swaggermen-core/*": ["./swaggermen-core/src/*"]
     }

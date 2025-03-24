@@ -1,11 +1,11 @@
 {
   "name": "root",
   "private": true,
-  "homepage": "https://github.com/usalko/swaaggermen",
-  "bugs": "https://github.com/usalko/swaaggermen/issues",
+  "homepage": "https://github.com/usalko/swaggermen",
+  "bugs": "https://github.com/usalko/swaggermen/issues",
   "repository": {
     "type": "git",
-    "url": "https://github.com/usalko/swaaggermen"
+    "url": "https://github.com/usalko/swaggermen"
   },
   "license": "Apache-2.0",
   "workspaces": [
@@ -17,7 +17,6 @@
     "@babel/preset-env": "^7.23.3",
     "@babel/preset-react": "^7.23.3",
     "@babel/preset-typescript": "^7.23.3",
-    "@swaggermen/eslint-config": "2.1.0",
     "@storybook/addon-controls": "7.5.3",
     "@storybook/addon-docs": "7.5.3",
     "@storybook/addon-styling-webpack": "0.0.5",
@@ -69,23 +68,22 @@
     "fast-xml-parser": "4.4.1",
     "tar": "6.2.1",
     "micromatch": "4.0.8",
-    "@swaggermen/react-error-boundary": "3.0.0"
+    "@stoplight/react-error-boundary": "3.0.0"
   },
   "scripts": {
     "demo": "yarn workspace @swaggermen/swaggermen-demo",
     "swaggermen": "yarn workspace @swaggermen/swaggermen",
     "swaggermen-core": "yarn workspace @swaggermen/swaggermen-core",
-    "swaggermen-dev-portal": "yarn workspace @swaggermen/swaggermen-dev-portal",
-    "build": "yarn workspace @swaggermen/swaggermen-core build && yarn workspace @swaggermen/swaggermen build && yarn workspace @swaggermen/swaggermen-dev-portal build",
+    "build": "yarn workspace @swaggermen/swaggermen-core build && yarn workspace @swaggermen/swaggermen build",
     "build.docs": "yarn workspace @swaggermen/swaggermen build.docs",
-    "postbuild": "yarn workspace @swaggermen/swaggermen test.packaging && yarn workspace @swaggermen/swaggermen-core test.packaging && yarn workspace @swaggermen/swaggermen-dev-portal test.packaging",
+    "postbuild": "yarn workspace @swaggermen/swaggermen test.packaging && yarn workspace @swaggermen/swaggermen-core test.packaging",
     "lint": "eslint '{packages,examples}/*/src/**/*.{ts,tsx}'",
     "version": "lerna version --no-push",
     "release": "lerna publish from-package --yes --registry https://registry.npmjs.org --loglevel silly",
     "release.docs": "yarn workspace @swaggermen/swaggermen release.docs",
     "type-check": "yarn workspaces run type-check",
-    "test": "yarn workspace @swaggermen/swaggermen test && yarn workspace @swaggermen/swaggermen-core test && yarn workspace @swaggermen/swaggermen-dev-portal test --passWithNoTests",
-    "test.prod": "yarn workspace @swaggermen/swaggermen test.prod && yarn workspace @swaggermen/swaggermen-core test.prod && yarn workspace @swaggermen/swaggermen-dev-portal test.prod --passWithNoTests",
+    "test": "yarn workspace @swaggermen/swaggermen test && yarn workspace @swaggermen/swaggermen-core test",
+    "test.prod": "yarn workspace @swaggermen/swaggermen test.prod && yarn workspace @swaggermen/swaggermen-core test.prod",
     "prepublishOnly": "yarn build",
     "/// examples ///": "",
     "copy:angular": "mkdir examples-dev ; cp -a -v ./examples/angular ./examples-dev ; sh ./use-local-swaggermen.sh angular",

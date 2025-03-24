@@ -1,5 +1,5 @@
 module.exports = {
-  preset: '@swaggermen/scripts',
+  preset: '@stoplight/scripts',
   testEnvironment: 'jsdom',
   setupFilesAfterEnv: ['<rootDir>/../../setupTests.ts'],
   snapshotSerializers: ['enzyme-to-json/serializer'],

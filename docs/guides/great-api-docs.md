@@ -38,7 +38,7 @@ Swaggermen groups them by tags and uses their summary in the sidebar, then shows
 
 Some folks have built their own API Client code, also known as Software Development Kits ("SDKs"). These are sometimes hand-crafted and sometimes are automatically generated from OpenAPI. 
 
-Swaggermen generates sample code for you in curl and other popular programming languages. In the future, Swaggermen may integrate [custom SDK templates](https://github.com/usalko/swaaggermen/discussions/1138) for those who already have their own SDKs.
+Swaggermen generates sample code for you in curl and other popular programming languages. In the future, Swaggermen may integrate [custom SDK templates](https://github.com/usalko/swaggermen/discussions/1138) for those who already have their own SDKs.
 
 ### Guides & Tutorials
 
@@ -47,8 +47,6 @@ The API reference with code samples helps developers in the later stage of integ
 Tutorials are similar to getting started guides but are looking to make it easy to perform a particular use case. For example, things like pagination are partially covered in API reference documentation. Maybe a query string parameter exists like `?page=1` or `?cursor=s24dfkjfhkdf`. Some developers understand what to do from that alone, but many won't. A tutorial for how pagination works for your API is a great place to explain why you chose your specific pagination approach [of the many that exist](https://www.citusdata.com/blog/2016/03/30/five-ways-to-paginate/), and explain how your users should interact with it. E.g.: [Slack](https://api.slack.com/docs/pagination) and [Stripe](https://stripe.com/docs/api/pagination).
 
 Other common tutorials are "Common Errors," which explain how your [error objects](https://apisyouwonthate.com/blog/creating-good-api-errors-in-rest-graphql-and-grpc/) work, what common status codes mean so you don't need to document 500, 501, 502 on every single operation, and any other useful information that can help users.
-
-_The basic Swaggermen package doesn't cover Markdown Articles, but [Swaggermen Dev Portal](../getting-started/dev-portal/introduction.md) does._
 
 #### Code Samples
 

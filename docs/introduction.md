@@ -7,9 +7,6 @@ Swaggermen is made by [Swaggermen](https://swaggermen.io/?utm_source=github&utm_
 How you chose to work with Swaggermen depends on what you are trying to do.
 
 - **[Swaggermen](getting-started/swaggermen/introduction.md)** - Only need documentation for your API reference? Integrate Swaggermen with any Content Management System, existing documentation portal, website, or React application.
-- **[Swaggermen Dev Portal](getting-started/dev-portal/introduction.md)** - Need a full documentation portal combining articles and guides with your API reference? Integrate Swaggermen Dev Portal using ReactJS or HTML.
-
-Still having trouble deciding between Swaggermen and Swaggermen Dev Portal? Read the [Swaggermen vs Swaggermen Dev Portal](swaggermen-vs-dev-portal.md) guide to better understand the differences.
 
 ## Getting started with Swaggermen
 
@@ -17,16 +14,8 @@ Learn how to integrate Swaggermen with any of these popular frameworks.
 
 - [Introduction](getting-started/swaggermen/introduction.md)
 - [Usage with HTML](getting-started/swaggermen/html.md)
-- [Usage with ReactJS](getting-started/swaggermen/react.md)
+- [Usage with ReactJS](getting-started/elements/react.md)
 - [Usage with AngularJS](getting-started/swaggermen/angular.md)
-
-## Getting started with Swaggermen Dev Portal
-
-Learn how to integrate Swaggermen Dev Portal with any of these popular frameworks.
-
-- [Introduction](getting-started/dev-portal/introduction.md)
-- [Usage with HTML](getting-started/dev-portal/html.md)
-- [Usage with ReactJS](getting-started/dev-portal/react.md)
 
 ## Free Hosted Docs
 

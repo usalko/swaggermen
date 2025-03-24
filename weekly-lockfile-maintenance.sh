@@ -25,4 +25,4 @@ git push --set-upstream origin "$BRANCH_NAME"
 
 BODY='{"head":''"'${BRANCH_NAME}'"'',"base":"main","title":"Weekly lockfile maintenance"}'
 
-curl -X POST -H "Accept:application/vnd.github.v3+json" -u "$GIT_AUTHOR_NAME":"$GH_TOKEN" https://api.github.com/repos/usalko/swaaggermen/pulls -d "$BODY"
+curl -X POST -H "Accept:application/vnd.github.v3+json" -u "$GIT_AUTHOR_NAME":"$GH_TOKEN" https://api.github.com/repos/usalko/swaggermen/pulls -d "$BODY"
