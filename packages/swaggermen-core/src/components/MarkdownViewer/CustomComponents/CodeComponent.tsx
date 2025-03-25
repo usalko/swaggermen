@@ -1,5 +1,7 @@
 /* eslint-disable prettier/prettier */
+{/* @ts-expect-error */}
 import { JsonSchemaViewer } from '@stoplight/json-schema-viewer';
+{/* @ts-expect-error */}
 import { DefaultSMDComponents } from '@stoplight/markdown-viewer';
 import { Box, Flex, Icon } from '@stoplight/mosaic';
 import { HttpParamStyles, IHttpOperation, IHttpRequest, NodeType } from '@stoplight/types';
@@ -46,6 +48,7 @@ const SchemaAndDescription = ({ title: titleProp, schema }: ISchemaAndDescriptio
     <Box py={2}>
       {title && (
         <Flex alignItems="center" p={2}>
+          {/* @ts-expect-error */}
           <Icon icon={NodeTypeIconDefs[NodeType.Model]} color={NodeTypeColors[NodeType.Model]} />
           <Box color="muted" px={2}>
             {title}
@@ -65,7 +68,7 @@ const SchemaAndDescription = ({ title: titleProp, schema }: ISchemaAndDescriptio
 
 export { DefaultSMDComponents };
 
-export const CodeComponent: CustomComponentMapping['code'] = props => {
+export const CodeComponent: CustomComponentMapping['code'] = (props: any) => {
   const { title, jsonSchema, http, resolved, children } = props;
 
   const resolver = useInlineRefResolver();

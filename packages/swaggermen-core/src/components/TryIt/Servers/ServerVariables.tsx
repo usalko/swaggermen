@@ -13,6 +13,7 @@ interface ServerVariablesProps<P extends keyof any = string> {
 export const ServerVariables: React.FC<ServerVariablesProps> = ({ variables, values, onChangeValue }) => {
   return (
     <Panel defaultIsOpen data-test="server-vars-try-it">
+      {/* @ts-expect-error */}
       <Panel.Titlebar>Server Variables</Panel.Titlebar>
       <Panel.Content className="sl-overflow-y-auto ParameterGrid ServerVariablesContent">
         {variables.map(variable => (

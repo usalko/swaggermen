@@ -1,3 +1,4 @@
+{/* @ts-expect-error */}
 import { DefaultComponentMapping } from '@stoplight/markdown-viewer';
 import * as React from 'react';
 import { Route, Routes, useInRouterContext } from 'react-router-dom';
@@ -13,9 +14,9 @@ import { getDisplayName } from './utils';
 
 const components: Partial<DefaultComponentMapping> = {
   a: ReactRouterMarkdownLink,
-  h2: ({ color, ...props }) => <LinkHeading size={2} {...props} />,
-  h3: ({ color, ...props }) => <LinkHeading size={3} {...props} />,
-  h4: ({ color, ...props }) => <LinkHeading size={4} {...props} />,
+  h2: ({ color, ...props }: {color: any}) => <LinkHeading size={2} {...props} />,
+  h3: ({ color, ...props }: {color: any}) => <LinkHeading size={3} {...props} />,
+  h4: ({ color, ...props }: {color: any}) => <LinkHeading size={4} {...props} />,
 };
 
 const InternalRoutes = ({ children }: { children: React.ReactNode }): JSX.Element => {

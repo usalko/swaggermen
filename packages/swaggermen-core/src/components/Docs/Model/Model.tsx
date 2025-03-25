@@ -1,7 +1,8 @@
+{/* @ts-expect-error */}
 import { JsonSchemaViewer } from '@stoplight/json-schema-viewer';
 import { Box, CopyButton, Flex, Heading, HStack, NodeAnnotation, Panel, Select, Text, VStack } from '@stoplight/mosaic';
 import { CodeViewer } from '@stoplight/mosaic-code-viewer';
-import { withErrorBoundary } from '@stoplight/react-error-boundary';
+import { ErrorBoundaryProps, withErrorBoundary } from '@stoplight/react-error-boundary';
 import cn from 'classnames';
 import { JSONSchema7 } from 'json-schema';
 import * as React from 'react';
@@ -48,6 +49,7 @@ const ModelComponent: React.FC<ModelProps> = ({
       <Box pos="relative">
         <HStack spacing={5}>
           {title && (
+            /* @ts-expect-error */
             <Heading size={1} fontWeight="semibold">
               {title}
             </Heading>
@@ -119,6 +121,7 @@ const ModelExamples = React.memo(({ data, isCollapsible = false }: { data: JSONS
   }, []);
 
   const examplesSelect = examples.length > 1 && (
+    /* @ts-expect-error */
     <Select
       aria-label="Example"
       value={String(chosenExampleIndex)}
@@ -131,6 +134,7 @@ const ModelExamples = React.memo(({ data, isCollapsible = false }: { data: JSONS
 
   return (
     <Panel rounded isCollapsible={isCollapsible} defaultIsOpen={!isCollapsible}>
+      {/* @ts-expect-error */}
       <Panel.Titlebar rightComponent={selectedExample ? <CopyButton size="sm" copyValue={selectedExample} /> : null}>
         {examplesSelect || (
           <Text color="body" role="heading">
@@ -141,6 +145,7 @@ const ModelExamples = React.memo(({ data, isCollapsible = false }: { data: JSONS
 
       <Panel.Content p={0}>
         {show || !exceedsSize(selectedExample) ? (
+          /* @ts-expect-error */
           <CodeViewer
             aria-label={selectedExample}
             noCopyButton
@@ -157,4 +162,5 @@ const ModelExamples = React.memo(({ data, isCollapsible = false }: { data: JSONS
   );
 });
 
-export const Model = withErrorBoundary<ModelProps>(ModelComponent, { recoverableProps: ['data'] });
+{/* @ts-expect-error */}
+export const Model: React.FunctionComponent<ModelProps & ErrorBoundaryProps<{}>> = withErrorBoundary<ModelProps>(ModelComponent, { recoverableProps: ['data'] });

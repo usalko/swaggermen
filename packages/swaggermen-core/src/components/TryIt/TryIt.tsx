@@ -34,7 +34,7 @@ import { ServersDropdown } from './Servers/ServersDropdown';
 import { ServerVariables } from './Servers/ServerVariables';
 import { useServerVariables } from './Servers/useServerVariables';
 
-export interface TryItProps {
+export interface TryItProps extends JSX.IntrinsicAttributes {
   httpOperation: IHttpEndpointOperation;
 
   /**
@@ -129,7 +129,7 @@ export const TryIt: React.FC<TryItProps> = ({
 
   const getValues = () =>
     Object.keys(bodyParameterValues)
-      .filter(param => !isAllowedEmptyValues[param] ?? true)
+      .filter(param => !(isAllowedEmptyValues[param] ?? true))
       .reduce<BodyParameterValues>((previousValue, currentValue) => {
         previousValue[currentValue] = bodyParameterValues[currentValue];
         return previousValue;
@@ -308,6 +308,7 @@ export const TryIt: React.FC<TryItProps> = ({
       {isHttpOperation(httpOperation) ? (
         <Panel.Content className="SendButtonHolder" pt={!isOnlySendButton && !embeddedInMd ? 0 : undefined}>
           <HStack alignItems="center" spacing={2}>
+            {/* @ts-expect-error */}
             <Button appearance="primary" loading={loading} disabled={loading} onPress={handleSendRequest} size="sm">
               Send API Request
             </Button>
@@ -321,6 +322,7 @@ export const TryIt: React.FC<TryItProps> = ({
 
           {validateParameters && hasRequiredButEmptyParameters && (
             <Box mt={4} color="danger-light" fontSize="sm">
+              {/* @ts-expect-error */}
               <Icon icon={['fas', 'exclamation-triangle']} className="sl-mr-1" />
               You didn't provide all of the required parameters!
             </Box>
@@ -346,6 +348,7 @@ export const TryIt: React.FC<TryItProps> = ({
 
     tryItPanelElem = (
       <Panel isCollapsible={false} p={0} className="TryItPanel">
+        {/* @ts-expect-error */}
         <Panel.Titlebar bg="canvas-300">
           <Box
             fontWeight="bold"

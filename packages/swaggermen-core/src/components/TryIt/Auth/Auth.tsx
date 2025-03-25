@@ -96,6 +96,7 @@ export const TryItAuth: React.FC<TryItAuthProps> = ({
 
   return (
     <Panel defaultIsOpen data-test="try-it-auth">
+      {/* @ts-expect-error */}
       <Panel.Titlebar
         rightComponent={
           filteredSecurityItems.length > 1 && (
@@ -104,6 +105,7 @@ export const TryItAuth: React.FC<TryItAuthProps> = ({
               items={menuItems}
               closeOnPress
               renderTrigger={({ isOpen }) => (
+                /* @ts-expect-error */
                 <Button appearance="minimal" size="sm" iconRight={['fas', 'sort']} active={isOpen}>
                   {menuName}
                 </Button>

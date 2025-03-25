@@ -42,6 +42,7 @@ export const ServersDropdown = ({ servers }: ServersDropdownProps) => {
       items={serverItems}
       closeOnPress
       renderTrigger={({ isOpen }) => (
+        /* @ts-expect-error */
         <FieldButton icon={faServer} size="sm" active={isOpen}>
           {chosenServer?.description || 'Server'}
         </FieldButton>

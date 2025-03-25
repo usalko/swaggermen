@@ -47,6 +47,7 @@ export const ParameterEditor: React.FC<ParameterProps> = ({
       <Text mx={3}>:</Text>
       <div>
         {parameterValueOptions ? (
+          /* @ts-expect-error */
           <Select
             flex={1}
             aria-label={parameter.name}
@@ -57,6 +58,7 @@ export const ParameterEditor: React.FC<ParameterProps> = ({
           />
         ) : (
           <Flex flex={1}>
+            {/* @ts-expect-error */}
             <Input
               id={inputId}
               aria-label={parameter.name}
@@ -70,6 +72,7 @@ export const ParameterEditor: React.FC<ParameterProps> = ({
               onChange={e => onChange && onChange(e.currentTarget.value)}
             />
             {examples && (
+              /* @ts-expect-error */
               <Select
                 aria-label={`${parameter.name}-select`}
                 flex={1}
@@ -87,6 +90,7 @@ export const ParameterEditor: React.FC<ParameterProps> = ({
           <div></div>
           <div>
             <Flex flex={1}>
+              {/* @ts-expect-error */}
               <Input
                 className="Checkbox"
                 aria-label={`${parameter.name}-checkbox`}

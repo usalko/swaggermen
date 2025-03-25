@@ -1,5 +1,5 @@
 import { Box, Flex, Heading, NodeAnnotation, VStack } from '@stoplight/mosaic';
-import { withErrorBoundary } from '@stoplight/react-error-boundary';
+import { ErrorBoundaryProps, withErrorBoundary } from '@stoplight/react-error-boundary';
 import { IHttpService } from '@stoplight/types';
 import * as React from 'react';
 
@@ -37,6 +37,7 @@ const HttpServiceComponent = React.memo<HttpServiceProps>(
         {data.name && !layoutOptions?.noHeading && (
           <Flex justifyContent="between" alignItems="center">
             <Box pos="relative">
+              {/* @ts-expect-error */}
               <Heading size={1} mb={4} fontWeight="semibold">
                 {data.name}
               </Heading>
@@ -97,4 +98,5 @@ const HttpServiceComponent = React.memo<HttpServiceProps>(
 );
 HttpServiceComponent.displayName = 'HttpService.Component';
 
-export const HttpService = withErrorBoundary<HttpServiceProps>(HttpServiceComponent, { recoverableProps: ['data'] });
+{/* @ts-expect-error */}
+export const HttpService: React.FunctionComponent<HttpServiceProps & ErrorBoundaryProps<{}>> = withErrorBoundary<HttpServiceProps>(HttpServiceComponent, { recoverableProps: ['data'] });

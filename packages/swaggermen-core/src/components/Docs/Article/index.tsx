@@ -1,6 +1,7 @@
+{/* @ts-expect-error */}
 import { IMarkdownViewerProps } from '@stoplight/markdown-viewer';
 import { Box } from '@stoplight/mosaic';
-import { withErrorBoundary } from '@stoplight/react-error-boundary';
+import { ErrorBoundaryProps, withErrorBoundary } from '@stoplight/react-error-boundary';
 import * as React from 'react';
 import { useLocation } from 'react-router-dom';
 
@@ -35,4 +36,5 @@ const ArticleComponent = React.memo<ArticleProps>(({ data }) => {
   return <BaseArticleComponent data={data} />;
 });
 
-export const Article = withErrorBoundary<ArticleProps>(ArticleComponent, { recoverableProps: ['data'] });
+{/* @ts-expect-error */}
+export const Article: React.FunctionComponent<ArticleProps & ErrorBoundaryProps<{}>> = withErrorBoundary<ArticleProps>(ArticleComponent, { recoverableProps: ['data'] });

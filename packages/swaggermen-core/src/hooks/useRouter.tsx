@@ -1,13 +1,12 @@
 import { Dictionary } from '@stoplight/types';
 import * as React from 'react';
-import { BrowserRouter, HashRouter, MemoryRouter } from 'react-router-dom';
-import { StaticRouter } from 'react-router-dom/server.js';
+import { BrowserRouter, HashRouter, MemoryRouter, StaticRouter } from 'react-router-dom';
 
 import { RouterType } from '../types';
 
 const RouterComponent: Dictionary<React.ComponentType, RouterType> = {
   history: BrowserRouter,
-  memory: MemoryRouter,
+  memory: MemoryRouter as any,
   hash: HashRouter,
   static: StaticRouter as any,
 };
@@ -15,10 +14,13 @@ const RouterComponent: Dictionary<React.ComponentType, RouterType> = {
 interface RouterProps {
   basename?: string;
   location?: string;
+  children?: any;
+  window?: any;
 }
 
 export const useRouter = (router: RouterType, basePath: string, staticRouterPath?: string) => {
-  const Router = RouterComponent[router];
+  /* @ts-expect-error */
+  const Router: JSX.Element = RouterComponent[router];
   const routerProps: RouterProps = {
     ...(router !== 'memory' && { basename: basePath }),
     ...(router === 'static' && { location: staticRouterPath }),

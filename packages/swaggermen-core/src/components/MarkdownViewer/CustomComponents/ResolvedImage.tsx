@@ -1,3 +1,4 @@
+{/* @ts-expect-error */}
 import { CustomComponentMapping } from '@stoplight/markdown-viewer';
 import { dirname, resolve } from '@stoplight/path';
 import React from 'react';
@@ -6,7 +7,7 @@ import URI from 'urijs';
 import { BundledBranchNode, IntegrationKind } from '../../../types';
 
 export const createResolvedImageComponent = (branchNode: BundledBranchNode) => {
-  const ResolvedImage: CustomComponentMapping['img'] = ({ title, alt, src }) => {
+  const ResolvedImage: CustomComponentMapping['img'] = ({ title, alt, src }: {title: any, alt: any, src: any}) => {
     return <img src={resolveImageUrlHandler(src || '', branchNode)} title={title} alt={alt} />;
   };
   return React.memo(ResolvedImage);

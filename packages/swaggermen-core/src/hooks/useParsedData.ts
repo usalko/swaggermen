@@ -24,8 +24,8 @@ const parserMap: Record<NodeType, Parser> = {
   [NodeType.Styleguide]: parseUnknown,
   [NodeType.Image]: parseUnknown,
   [NodeType.HttpCallback]: parseUnknown,
-  [NodeType.SwaggermenOverride]: parseUnknown,
-  [NodeType.SwaggermenResolutions]: parseUnknown,
+  [NodeType.Override]: parseUnknown,
+  [NodeType.Resolutions]: parseUnknown,
   [NodeType.Unknown]: parseUnknown,
 };
 

@@ -8,6 +8,7 @@ export const LinkHeading = React.memo<LinkHeadingProps>(function LinkHeading(pro
   const isUsingRouter = !!useRouterType();
   const Comp = isUsingRouter ? CustomLinkHeading : MosaicLinkHeading;
 
+  {/* @ts-expect-error */}
   return <Comp {...props} />;
 });
 
@@ -17,5 +18,6 @@ const CustomLinkHeading = React.memo<LinkHeadingProps>(function LinkHeading({ id
   const route = pathname.split('#')[0];
   const id = routerKind === 'hash' ? `${route}#${_id}` : _id;
 
+  {/* @ts-expect-error */}
   return <MosaicLinkHeading id={id} {...props} />;
 });

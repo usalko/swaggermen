@@ -6,7 +6,7 @@ import { atom, useAtom } from 'jotai';
 import { cloneDeep, find, findKey } from 'lodash';
 import React, { memo, useEffect, useMemo, useState } from 'react';
 
-import { persistAtom } from '../../utils/jotai/persistAtom';
+import { atomWithStorage } from 'jotai/utils'
 import { convertRequestToSample } from './convertRequestToSample';
 import { CodeSample } from './extractCodeSamples';
 import {
@@ -44,8 +44,8 @@ type LanguageConfigWithCode = LanguageConfig &
     libraries: Dictionary<LibraryConfigWithCode, SupportedLibrary>;
   };
 
-const selectedLanguageAtom = persistAtom<string>('RequestSamples_selectedLanguage', atom('shell'));
-const selectedLibraryAtom = persistAtom<string>('RequestSamples_selectedLibrary', atom('curl'));
+const selectedLanguageAtom = atomWithStorage<string>('RequestSamples_selectedLanguage', 'shell');
+const selectedLibraryAtom = atomWithStorage<string>('RequestSamples_selectedLibrary', 'curl');
 
 const fallbackText = 'Unable to generate code example';
 
@@ -206,6 +206,7 @@ export const RequestSamples = memo<RequestSamplesProps>(({ request, embeddedInMd
 
   return (
     <Panel rounded={embeddedInMd ? undefined : true} isCollapsible={embeddedInMd}>
+      {/* @ts-expect-error */}
       <Panel.Titlebar rightComponent={<CopyButton size="sm" copyValue={requestSample || ''} />}>
         <Box ml={-2}>
           <Menu
@@ -213,7 +214,8 @@ export const RequestSamples = memo<RequestSamplesProps>(({ request, embeddedInMd
             closeOnPress
             items={menuItems}
             renderTrigger={({ isOpen }) => (
-              <Button size="sm" iconRight="chevron-down" appearance="minimal" active={isOpen}>
+            /* @ts-expect-error */
+            <Button size="sm" iconRight="chevron-down" appearance="minimal" active={isOpen}>
                 Request Sample: {selectedSampleConfig.displayText}
               </Button>
             )}
@@ -223,6 +225,7 @@ export const RequestSamples = memo<RequestSamplesProps>(({ request, embeddedInMd
 
       <Panel.Content p={0}>
         {requestSample !== null && (
+          /* @ts-expect-error */
           <CodeViewer
             aria-label={requestSample}
             noCopyButton

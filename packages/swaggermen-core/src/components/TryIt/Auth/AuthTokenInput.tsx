@@ -4,7 +4,7 @@ import * as React from 'react';
 
 import { useUniqueId } from '../../../hooks/useUniqueId';
 
-interface AuthTokenInputProps {
+interface AuthTokenInputProps extends JSX.IntrinsicAttributes {
   onChange: (value: string) => void;
   type: HttpSecurityScheme['type'];
   name: string;
@@ -20,6 +20,7 @@ export const AuthTokenInput: React.FC<AuthTokenInputProps> = ({ type, name, valu
       </label>
       <Text mx={3}>:</Text>
       <Flex flex={1}>
+        {/* @ts-expect-error */}
         <Input
           id={inputId}
           aria-label={name}

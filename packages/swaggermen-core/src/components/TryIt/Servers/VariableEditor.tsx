@@ -22,6 +22,7 @@ export const VariableEditor: React.FC<VariableProps> = ({ variable, value, onCha
       <Text mx={3}>:</Text>
       <div>
         {variable.enum ? (
+          /* @ts-ignore */
           <Select
             flex={1}
             aria-label={variable.name}
@@ -31,6 +32,7 @@ export const VariableEditor: React.FC<VariableProps> = ({ variable, value, onCha
           />
         ) : (
           <Flex flex={1}>
+            {/* @ts-ignore */}
             <Input
               id={inputId}
               aria-label={variable.name}

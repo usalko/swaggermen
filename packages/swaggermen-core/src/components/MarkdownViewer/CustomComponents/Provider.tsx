@@ -1,15 +1,14 @@
-import {
-  CustomComponentMapping as MDVCustomComponentMapping,
-  MarkdownViewerProvider,
-} from '@stoplight/markdown-viewer';
+{/* @ts-expect-error */}
+import { CustomComponentMapping as MDVCustomComponentMapping, MarkdownViewerProvider } from '@stoplight/markdown-viewer';
 import * as React from 'react';
 
 import { CodeComponent } from './CodeComponent';
 
 export type CustomComponentMapping = MDVCustomComponentMapping;
 
-interface MarkdownComponentsProviderProps {
+interface MarkdownComponentsProviderProps extends JSX.IntrinsicAttributes {
   value: Partial<CustomComponentMapping> | undefined;
+  children?: any,
 }
 
 /**

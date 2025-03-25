@@ -32,7 +32,7 @@ export type ExtensionRowProps = {
  */
 export type ExtensionAddonRenderer = (props: ExtensionRowProps) => React.ReactNode;
 
-interface BaseDocsProps {
+interface BaseDocsProps extends JSX.IntrinsicAttributes {
   /**
    * CSS class to add to the root container.
    */

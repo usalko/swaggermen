@@ -8,10 +8,10 @@ import {
   useThemeIsDark,
   VStack,
 } from '@stoplight/mosaic';
-import { withErrorBoundary } from '@stoplight/react-error-boundary';
+import { ErrorBoundaryProps, withErrorBoundary } from '@stoplight/react-error-boundary';
 import { HttpMethod, IHttpEndpointOperation, IHttpOperation } from '@stoplight/types';
 import cn from 'classnames';
-import { useAtomValue } from 'jotai/utils';
+import { useAtomValue } from 'jotai';
 import * as React from 'react';
 
 import { HttpMethodColors } from '../../../constants';
@@ -129,7 +129,8 @@ const HttpOperationComponent = React.memo<HttpOperationProps>(
 );
 HttpOperationComponent.displayName = 'HttpOperation.Component';
 
-export const HttpOperation = withErrorBoundary<HttpOperationProps>(HttpOperationComponent, {
+{/* @ts-expect-error */}
+export const HttpOperation:  React.FunctionComponent<HttpOperationProps & ErrorBoundaryProps<{}>> = withErrorBoundary<HttpOperationProps>(HttpOperationComponent, {
   recoverableProps: ['data'],
 });
 
@@ -233,6 +234,7 @@ export function OperationHeader({
       <Box pos="relative">
         <HStack spacing={5}>
           {!noHeading && name ? (
+            /* @ts-expect-error */
             <Heading size={1} fontWeight="semibold">
               {name}
             </Heading>
